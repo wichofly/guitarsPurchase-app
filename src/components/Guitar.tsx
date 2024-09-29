@@ -1,4 +1,4 @@
-import type { Guitar } from '../data/db'; // Type-only import for Guitar interface
+import type { Guitar } from '../types';
 
 interface Props {
   guitar: Guitar;
