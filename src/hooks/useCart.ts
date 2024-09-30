@@ -32,11 +32,11 @@ export const useCart = () => {
     }
   };
 
-  const removeFromCart = (id) => {
+  const removeFromCart = (id: Guitar['id']) => {
     setCart((prevCart) => prevCart.filter((guitar) => guitar.id !== id));
   };
 
-  const decreaseQuantity = (id) => {
+  const decreaseQuantity = (id: Guitar['id']) => {
     const updatedCart = cart.map((item) => {
       if (item.id === id && item.quantity > MIN_ITEMS) {
         return {
@@ -49,7 +49,7 @@ export const useCart = () => {
     setCart(updatedCart);
   };
 
-  const increaseQuantity = (id) => {
+  const increaseQuantity = (id: Guitar['id']) => {
     const updatedCart = cart.map((item) => {
       if (item.id === id && item.quantity < MAX_ITEMS) {
         return {
