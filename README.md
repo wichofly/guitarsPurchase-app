@@ -18,6 +18,7 @@ GuitarPurchase is a simple yet powerful e-commerce app for browsing and purchasi
 
 ## Project Structure
 
+```
 src/
 │
 ├── components/
@@ -33,6 +34,7 @@ src/
 │
 └── types/
     └── types.ts           # TypeScript interfaces for Guitar and CartItem
+```
 
 ## Deploy in Netlify
 
