@@ -62,7 +62,7 @@ export const useCart = () => {
     setCart(updatedCart);
   };
 
-  const clearCart = (e) => setCart([]);
+  const clearCart = () => setCart([]);
 
   // State Derivative
   const isEmpty = useMemo(() => cart.length === 0, [cart]);
