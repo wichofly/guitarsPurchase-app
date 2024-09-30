@@ -1,16 +1,11 @@
-// interface Guitar {
-//   name: string;
-//   image: string;
-//   description: string;
-//   price: number;
-// }
+import type { Guitar } from '../types';
 
-// interface Props {
-//   guitar: Guitar[];
-//   addToCart: () => void;
-// }
+interface Props {
+  guitar: Guitar;
+  addToCart: (item: Guitar) => void;
+}
 
-export default function Guitar({ guitar, addToCart }) {
+export default function Guitar({ guitar, addToCart }: Props) {
   const { name, image, description, price } = guitar;
 
   return (
