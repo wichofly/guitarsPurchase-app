@@ -1,4 +1,3 @@
-import { PiGuitarLight } from 'react-icons/pi';
 import { CartItem, Guitar } from '../types';
 
 interface Props {
@@ -26,10 +25,13 @@ export default function Header({
         <div className="row justify-content-center justify-content-md-between">
           <div className="col-8 col-md-3">
             <a href="index.html">
-              <h4>
+              <h4 style={{ fontSize: '1.5rem', color: '#fff' }}>
                 Guitar Purchase
-                <PiGuitarLight fontSize="3rem" />
-                <br />
+                <img
+                  src="/img/guitar-playing.png"
+                  alt="image header"
+                  style={{ width: '70px', height: 'auto' }}
+                />
               </h4>
             </a>
           </div>
