@@ -125,7 +125,7 @@ export default function Header({ cart, dispatch }: Props) {
                 >
                   Empty Cart
                 </button>
-              </div>    
+              </div>
             </div>
           </nav>
         </div>
