@@ -5,10 +5,9 @@ import { CartActions } from '../reducers/cartReducer';
 interface Props {
   cart: CartItem[];
   dispatch: Dispatch<CartActions>;
-  clearCart: () => void;
 }
 
-export default function Header({ cart, dispatch, clearCart }: Props) {
+export default function Header({ cart, dispatch }: Props) {
   // State Derivative
   const isEmpty = useMemo(() => cart.length === 0, [cart]);
   const cartTotal = useMemo(
@@ -122,11 +121,11 @@ export default function Header({ cart, dispatch, clearCart }: Props) {
 
                 <button
                   className="btn btn-dark w-100 mt-3 p-2"
-                  onClick={clearCart}
+                  onClick={() => dispatch({ type: 'clear-cart' })}
                 >
                   Empty Cart
                 </button>
-              </div>
+              </div>    
             </div>
           </nav>
         </div>

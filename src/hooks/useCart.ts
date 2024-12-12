@@ -14,10 +14,7 @@ export const useCart = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  const clearCart = () => setCart([]);
-
   return {
     cart,
-    clearCart,
   };
 };
