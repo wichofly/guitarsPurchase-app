@@ -6,8 +6,6 @@ interface Props {
   cart: CartItem[];
   dispatch: Dispatch<CartActions>;
   clearCart: () => void;
-  isEmpty: boolean;
-  cartTotal: number;
 }
 
 export default function Header({ cart, dispatch, clearCart }: Props) {
