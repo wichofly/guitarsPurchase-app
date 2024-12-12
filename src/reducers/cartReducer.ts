@@ -13,7 +13,7 @@ export interface CartActions {
     | 'decrease-quantity'
     | 'increase-quantity'
     | 'clear-cart';
-  payload: { item: Guitar } | { id: Guitar['id'] };
+  payload?: { item?: Guitar } | { id?: Guitar['id'] };
 }
 
 const initialCart = (): CartItem[] => {
