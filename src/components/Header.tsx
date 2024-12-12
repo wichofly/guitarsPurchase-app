@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { CartItem, Guitar } from '../types';
 
 interface Props {
@@ -16,9 +17,15 @@ export default function Header({
   decreaseQuantity,
   increaseQuantity,
   clearCart,
-  isEmpty,
-  cartTotal,
 }: Props) {
+  
+  // State Derivative
+  const isEmpty = useMemo(() => cart.length === 0, [cart]);
+  const cartTotal = useMemo(
+    () => cart.reduce((total, item) => total + item.quantity * item.price, 0),
+    [cart]
+  );
+
   return (
     <header className="py-5 header">
       <div className="container-xl">

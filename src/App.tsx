@@ -11,8 +11,7 @@ function App() {
     decreaseQuantity,
     increaseQuantity,
     clearCart,
-    isEmpty,
-    cartTotal,
+ 
   } = useCart();
 
   const [state, dispatch] = useReducer(cartReducer, initialState);
@@ -22,13 +21,12 @@ function App() {
   return (
     <>
       <Header
-        cart={cart}
+        cart={state.cart}
         removeFromCart={removeFromCart}
         decreaseQuantity={decreaseQuantity}
         increaseQuantity={increaseQuantity}
         clearCart={clearCart}
-        isEmpty={isEmpty}
-        cartTotal={cartTotal}
+   
       />
       <main className="container-xl mt-5">
         <h2 className="text-center">Our Collection</h2>
