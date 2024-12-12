@@ -59,20 +59,51 @@ export const cartReducer = (
   }
 
   if (action.type === 'remove-from-cart') {
+    const { id } = action.payload as { id: Guitar['id'] };
+
+    const deleteCart = state.cart.filter((guitar) => guitar.id !== id);
+
     return {
       ...state,
+      cart: deleteCart,
     };
   }
 
   if (action.type === 'decrease-quantity') {
+    const { id } = action.payload as { id: Guitar['id'] };
+
+    const updatedCart = state.cart.map((item) => {
+      if (item.id === id && item.quantity > MIN_ITEMS) {
+        return {
+          ...item,
+          quantity: item.quantity - 1,
+        };
+      }
+      return item;
+    });
+
     return {
       ...state,
+      cart: updatedCart,
     };
   }
 
   if (action.type === 'increase-quantity') {
+    const { id } = action.payload as { id: Guitar['id'] };
+
+    const updatedCart = state.cart.map((item) => {
+      if (item.id === id && item.quantity < MAX_ITEMS) {
+        return {
+          ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+      return item;
+    });
+
     return {
       ...state,
+      cart: updatedCart,
     };
   }
 
