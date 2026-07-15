@@ -1,6 +1,6 @@
 import { Dispatch, useMemo } from 'react';
-import { CartItem } from '../types';
 import { CartActions } from '../reducers/cartReducer';
+import { CartItem } from '../types';
 
 interface Props {
   cart: CartItem[];
@@ -10,9 +10,10 @@ interface Props {
 export default function Header({ cart, dispatch }: Props) {
   // State Derivative
   const isEmpty = useMemo(() => cart.length === 0, [cart]);
+
   const cartTotal = useMemo(
     () => cart.reduce((total, item) => total + item.quantity * item.price, 0),
-    [cart]
+    [cart],
   );
 
   return (

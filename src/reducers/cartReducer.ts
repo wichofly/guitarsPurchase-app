@@ -31,7 +31,7 @@ const MAX_ITEMS = 5;
 
 export const cartReducer = (
   state: CartState = initialState,
-  action: CartActions
+  action: CartActions,
 ) => {
   if (action.type === 'add-to-cart') {
     const { item } = action.payload as { item: Guitar };

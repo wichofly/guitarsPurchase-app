@@ -2,16 +2,16 @@ import { Dispatch, useEffect, useReducer } from 'react';
 import Guitar from './components/Guitar';
 import Header from './components/Header';
 import {
-  CartActions,
-  cartReducer,
-  CartState,
-  initialState,
+    CartActions,
+    cartReducer,
+    CartState,
+    initialState,
 } from './reducers/cartReducer';
 
 function App() {
   const [state, dispatch] = useReducer(cartReducer, initialState) as [
     CartState,
-    Dispatch<CartActions>
+    Dispatch<CartActions>,
   ];
 
   useEffect(() => {
@@ -21,6 +21,7 @@ function App() {
   return (
     <>
       <Header cart={state.cart} dispatch={dispatch} />
+
       <main className="container-xl mt-5">
         <h2 className="text-center">Our Collection</h2>
 
